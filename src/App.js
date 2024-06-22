@@ -2,11 +2,11 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 
-import { IncomeExpensesBalance } from "./components/IncomeExpensesBalance";
+import { IncomeExpenses } from "./components/IncomeExpenses";
 import { Transactionlist } from "./components/Transactionlist";
 import { Addtransaction } from "./components/Addtransaction";
 function App() {
-  const [transactions, setTransations] = useState([]);
+  const [transactions, setTransactions] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
   const [balance, setBalance] = useState(0);
   const [totalExpenses, setTotalExpenses] = useState(0);
@@ -22,35 +22,40 @@ function App() {
       } else {
         totalExpenses += transaction.amount;
       }
-      // balance = totalIncome + totalExpenses;
+      balance = totalIncome + totalExpenses;
     });
     setTotalIncome(totalIncome);
     setTotalExpenses(totalExpenses);
-    // setBalance(balance);
+    setBalance(balance);
   }, [transactions]);
 
-  // console.log(balance);
+  console.log(transactions);
 
   const incomingTransaction = (text, amount) => {
-    setTransations([
+    let id = Math.random();
+
+    setTransactions([
       ...transactions,
       {
         text,
         amount,
+        id,
       },
     ]);
   };
 
   return (
     <div>
-      <Header />
+      <Header balance={balance} />
       <div className="container">
-        <IncomeExpensesBalance
+        <IncomeExpenses
           totalIncome={totalIncome}
           totalExpenses={totalExpenses}
-          // balance={balance}
         />
-        <Transactionlist transactions={transactions} />
+        <Transactionlist
+          transactions={transactions}
+          setTransactions={setTransactions}
+        />
         <Addtransaction incomingTransaction={incomingTransaction} />
       </div>
     </div>

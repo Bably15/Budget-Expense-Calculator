@@ -1,7 +1,13 @@
 import React from "react";
 
-export const Transactionlist = ({ transactions }) => {
+export const Transactionlist = ({ transactions, setTransactions }) => {
   // console.log(transaction);
+  const deleteTransactionHandler = (i) => {
+    let a = transactions.filter((item) => item.id !== i);
+
+    setTransactions(a);
+  };
+
   return (
     <div>
       {" "}
@@ -10,7 +16,12 @@ export const Transactionlist = ({ transactions }) => {
         {transactions.map((item, index) => (
           <li className="minus">
             {item.text} <span>{item.amount}</span>
-            <button className="delete-btn">x</button>
+            <button
+              className="delete-btn"
+              onClick={() => deleteTransactionHandler(item.id)}
+            >
+              x
+            </button>
           </li>
         ))}
       </ul>

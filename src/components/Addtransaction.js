@@ -15,6 +15,7 @@ export const Addtransaction = ({ incomingTransaction }) => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     incomingTransaction(text, parseInt(amount));
+
     setAmount(0);
     setText("");
   };
