@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Bably15/Budget-Expense-Calculator/static/css/main.3131c544.css",
+    "main.js": "/Bably15/Budget-Expense-Calculator/static/js/main.46073b14.js",
+    "static/js/453.83bdee10.chunk.js": "/Bably15/Budget-Expense-Calculator/static/js/453.83bdee10.chunk.js",
+    "index.html": "/Bably15/Budget-Expense-Calculator/index.html",
+    "main.3131c544.css.map": "/Bably15/Budget-Expense-Calculator/static/css/main.3131c544.css.map",
+    "main.46073b14.js.map": "/Bably15/Budget-Expense-Calculator/static/js/main.46073b14.js.map",
+    "453.83bdee10.chunk.js.map": "/Bably15/Budget-Expense-Calculator/static/js/453.83bdee10.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3131c544.css",
+    "static/js/main.46073b14.js"
+  ]
+}
